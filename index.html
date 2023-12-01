@@ -27,7 +27,7 @@
 <body>
 
   <div id="game-container">
-    <img id="spongebob" src="https://www.spongebobshop.com/cdn/shop/products/SB-Standees-Spong-2_800x.jpg?v=1603744569" alt="SpongeBob SquarePants">
+    <img id="spongebob" alt="SpongeBob SquarePants">
     <div id="score">Score: <span id="score-value">0</span></div>
   </div>
 
@@ -36,8 +36,20 @@
     const spongebob = document.getElementById('spongebob');
     const scoreElement = document.getElementById('score-value');
 
+    // Array of SpongeBob image URLs
+    const spongebobImages = [
+      'https://upload.wikimedia.org/wikipedia/en/3/3b/SpongeBob_SquarePants_character.svg', // Replace with actual image URLs
+      'https://static.wikia.nocookie.net/nickelodeon/images/4/47/Spongebob.png/revision/latest/scale-to-width-down/1200?cb=20220801042358.jpg',
+      'https://m.media-amazon.com/images/I/61Y18wJ9pFL._AC_UF894,1000_QL80_.jpg',
+      // Add more images as needed
+    ];
+
     // Initialize score
     let score = 0;
+
+    // Set a random SpongeBob image on page load
+    const randomIndex = Math.floor(Math.random() * spongebobImages.length);
+    spongebob.src = spongebobImages[randomIndex];
 
     // Add click event listener to SpongeBob image
     spongebob.addEventListener('click', () => {
