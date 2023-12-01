@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpongeBob Clicker</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #spongebob {
+      width: 200px;
+      cursor: pointer;
+    }
+
+    #score {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="game-container">
+    <img id="spongebob" src="spongebob.png" alt="SpongeBob SquarePants">
+    <div id="score">Score: <span id="score-value">0</span></div>
+  </div>
+
+  <script>
+    // Get elements from the DOM
+    const spongebob = document.getElementById('spongebob');
+    const scoreElement = document.getElementById('score-value');
+
+    // Initialize score
+    let score = 0;
+
+    // Add click event listener to SpongeBob image
+    spongebob.addEventListener('click', () => {
+      // Increase score on each click
+      score += 1;
+      scoreElement.textContent = score;
+
+      // You can add more features or animations here
+    });
+  </script>
+
+</body>
+</html>
